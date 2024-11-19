@@ -1,0 +1,134 @@
+<Window x:Class="WpfApp1.RecommendationsPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recommendations" Height="600" Width="800">
+    <Grid Background="#F9FAFB">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Grid.Row="0">
+            <Button Content="CIBUU" Width="80" Height="30" Margin="5" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C"/>
+            <ComboBox Width="50" Height="30" Margin="5" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C">
+                <ComboBoxItem Content="Lviv" Background="#1976D2" Foreground="White"/>
+                <ComboBoxItem Content="Kyiv" Background="#1976D2" Foreground="White"/>
+                <ComboBoxItem Content="Odessa" Background="#1976D2" Foreground="White"/>
+            </ComboBox>
+            <TextBox Width="200" Height="30" Margin="5" Text="search" Foreground="Gray" Background="#E3F2FD"/>
+            <Button Content="Recommendations" Width="150" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+            <Button Content="Search" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+            <Button Content="Sign up" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+            <Button Content="Sign in" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Background="#E8F5E9" Margin="10" BorderBrush="#388E3C" BorderThickness="1" Grid.Column="0">
+                <StackPanel>
+                    <TextBlock Text="Map" FontSize="18" FontWeight="Bold" Margin="10"/>
+                    <Image Source="file:///D:/photo_2025.jpg" Stretch="Uniform" Margin="10"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#FCE4EC" Margin="10" BorderBrush="#D81B60" BorderThickness="1" Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Text="Events" FontSize="18" FontWeight="Bold" Margin="10"/>
+                    <ScrollViewer Height="400" VerticalScrollBarVisibility="Auto" Margin="10">
+                        <StackPanel Orientation="Vertical">
+                            
+                            <Border BorderBrush="#EC407A" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Concert: Rock Night" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="Time: 18:00, Location: Stadium" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#EC407A" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Theater: Hamlet" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="Time: 17:00, Location: Drama Theater" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#EC407A" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Movie Night: Sci-fi Marathon" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="Time: 20:00, Location: Cinema Hall" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#EC407A" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Dance Festival" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="Time: All Day, Location: Open Arena" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#EC407A" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Literature Club: Book Discussion" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="Time: 16:00, Location: Library" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#EC407A" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Fitness Workshop" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="Time: 10:00, Location: Gymnasium" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#EC407A" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Photography Contest" FontSize="14" FontWeight="Bold"/>
+                                    <TextBlock Text="Time: 15:00, Location: Art Studio" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#FFFDE7" Margin="10" BorderBrush="#FBC02D" BorderThickness="1" Grid.Column="2">
+                <StackPanel>
+                    <TextBlock Text="Recommended Restaurants" FontSize="18" FontWeight="Bold" Margin="10"/>
+                    <ScrollViewer Height="400" VerticalScrollBarVisibility="Auto" Margin="10">
+                        <StackPanel Orientation="Vertical">
+                            
+                            <Border BorderBrush="#FFD54F" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Restaurant E" FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="Description: Authentic Mexican cuisine." TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#FFD54F" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Restaurant F" FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="Description: Cozy French bistro." TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#FFD54F" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Restaurant G" FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="Description: Indian flavors with a twist." TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#FFD54F" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Restaurant H" FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="Description: Modern Asian dining." TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="#FFD54F" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="Restaurant I" FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="Description: Home-style barbecue." TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
