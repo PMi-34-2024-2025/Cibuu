@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\lab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\lab\\lab\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lab\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\lab\\lab\\ConsoleApp1\\WpfApp1\\RecommendationsPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lab\\ConsoleApp1\\WpfApp1\\RecommendationsPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 84,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\lab\\lab\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "lab\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\lab\\lab\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "lab\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T12:38:09.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RecommendationsPage.xaml.cs",
+              "DocumentMoniker": "D:\\lab\\lab\\ConsoleApp1\\WpfApp1\\RecommendationsPage.xaml.cs",
+              "RelativeDocumentMoniker": "lab\\ConsoleApp1\\WpfApp1\\RecommendationsPage.xaml.cs",
+              "ToolTip": "D:\\lab\\lab\\ConsoleApp1\\WpfApp1\\RecommendationsPage.xaml.cs",
+              "RelativeToolTip": "lab\\ConsoleApp1\\WpfApp1\\RecommendationsPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T12:36:18.064Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

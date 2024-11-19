@@ -1,0 +1,252 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.bll\\restaurantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|solutionrelative:cibuu.bll\\restaurantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA12324-32BF-47D9-B912-2A49DE1BF573}|ConsoleApp1\\ConsoleApp1.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA12324-32BF-47D9-B912-2A49DE1BF573}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FB7AA34-3B35-416F-BF16-AADF46C6D59B}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FB7AA34-3B35-416F-BF16-AADF46C6D59B}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.bll\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|solutionrelative:cibuu.bll\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FB7AA34-3B35-416F-BF16-AADF46C6D59B}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9FB7AA34-3B35-416F-BF16-AADF46C6D59B}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.bll\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|solutionrelative:cibuu.bll\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.bll\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51144DE9-624A-43FC-A197-C246F6C5F42B}|Cibuu.BLL\\Cibuu.BLL.csproj|solutionrelative:cibuu.bll\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|solutionrelative:cibuu.dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.dal\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|solutionrelative:cibuu.dal\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.dal\\models\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|solutionrelative:cibuu.dal\\models\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.dal\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|solutionrelative:cibuu.dal\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.dal\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|solutionrelative:cibuu.dal\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FB7AA34-3B35-416F-BF16-AADF46C6D59B}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\wpfapp1\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9FB7AA34-3B35-416F-BF16-AADF46C6D59B}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|c:\\users\\user\\desktop\\lab3\\consoleapp1\\cibuu.dal\\cibuu.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{813258CA-27AB-4ACD-877C-C13530524D19}|Cibuu.DAL\\Cibuu.DAL.csproj|solutionrelative:cibuu.dal\\cibuu.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\ReviewService.cs",
+              "RelativeDocumentMoniker": "Cibuu.BLL\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\ReviewService.cs",
+              "RelativeToolTip": "Cibuu.BLL\\ReviewService.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAqwB8AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T22:04:52.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\UserService.cs",
+              "RelativeDocumentMoniker": "Cibuu.BLL\\UserService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\UserService.cs",
+              "RelativeToolTip": "Cibuu.BLL\\UserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:53:16.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\User.cs",
+              "RelativeDocumentMoniker": "Cibuu.DAL\\models\\User.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\User.cs",
+              "RelativeToolTip": "Cibuu.DAL\\models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T22:08:37.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T07:31:29.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-18T07:31:29.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\Review.cs",
+              "RelativeDocumentMoniker": "Cibuu.DAL\\models\\Review.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\Review.cs",
+              "RelativeToolTip": "Cibuu.DAL\\models\\Review.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T22:09:38.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\ConsoleApp1\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\ConsoleApp1\\Program.cs",
+              "RelativeToolTip": "ConsoleApp1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAALEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T11:45:57.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RestaurantService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\RestaurantService.cs",
+              "RelativeDocumentMoniker": "Cibuu.BLL\\RestaurantService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\RestaurantService.cs",
+              "RelativeToolTip": "Cibuu.BLL\\RestaurantService.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAiwDsAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T22:03:39.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\AdminService.cs",
+              "RelativeDocumentMoniker": "Cibuu.BLL\\AdminService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.BLL\\AdminService.cs",
+              "RelativeToolTip": "Cibuu.BLL\\AdminService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T22:05:36.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Restaurant.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\Restaurant.cs",
+              "RelativeDocumentMoniker": "Cibuu.DAL\\models\\Restaurant.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\Restaurant.cs",
+              "RelativeToolTip": "Cibuu.DAL\\models\\Restaurant.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T22:09:06.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\Admin.cs",
+              "RelativeDocumentMoniker": "Cibuu.DAL\\models\\Admin.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\models\\Admin.cs",
+              "RelativeToolTip": "Cibuu.DAL\\models\\Admin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T22:10:12.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DatabaseManager.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\DatabaseManager.cs",
+              "RelativeDocumentMoniker": "Cibuu.DAL\\DatabaseManager.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\DatabaseManager.cs",
+              "RelativeToolTip": "Cibuu.DAL\\DatabaseManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvx4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:45:33.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\WpfApp1\\App.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\App.xaml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\WpfApp1\\App.xaml",
+              "RelativeToolTip": "WpfApp1\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-22T22:21:45.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Cibuu.DAL.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\Cibuu.DAL.csproj",
+              "RelativeDocumentMoniker": "Cibuu.DAL\\Cibuu.DAL.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\lab3\\ConsoleApp1\\Cibuu.DAL\\Cibuu.DAL.csproj",
+              "RelativeToolTip": "Cibuu.DAL\\Cibuu.DAL.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-22T12:44:20.768Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

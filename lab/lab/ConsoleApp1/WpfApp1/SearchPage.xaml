@@ -1,0 +1,153 @@
+﻿<Window x:Class="WpfApp1.SearchPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Search Page" Height="600" Width="800">
+    <Grid Background="#E6F0FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Top row for the buttons -->
+            <RowDefinition Height="*"/>
+            <!-- Main content row -->
+        </Grid.RowDefinitions>
+
+        <!-- Top Bar with Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="0">
+            <Button Content="CIBUU" Width="80" Height="30" Margin="5" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C"/>
+            <ComboBox Width="50" Height="30" Margin="5" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C">
+                <ComboBoxItem Content="Lviv" Background="#1976D2" Foreground="White"/>
+                <ComboBoxItem Content="Kyiv" Background="#1976D2" Foreground="White"/>
+                <ComboBoxItem Content="Odessa" Background="#1976D2" Foreground="White"/>
+            </ComboBox>
+            <TextBox Width="200" Height="30" Margin="5" Text="search" Foreground="Gray" GotFocus="RemoveText" LostFocus="AddText" Background="#E3F2FD"/>
+            <Button Content="Recommendations" Width="150" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+            <Button Content="Search" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+            <Button Content="Sign up" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+            <Button Content="Sign in" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+        </StackPanel>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Panel with Filters -->
+            <StackPanel Background="#F3F4F6" Margin="10" Grid.Column="0">
+                <Button Content="Cancel" Width="80" Margin="0,10,0,10" HorizontalAlignment="Left" Background="#E53935" Foreground="White"/>
+                <TextBlock Text="Filters" FontSize="16" FontWeight="Bold" Margin="0,10,0,10"/>
+
+                <!-- Cuisine Filter -->
+                <Expander Header="Cuisine" Margin="0,5">
+                    <StackPanel>
+                        <RadioButton GroupName="Cuisine" Content="Fast Food" Margin="0,5"/>
+                        <RadioButton GroupName="Cuisine" Content="Italian" Margin="0,5"/>
+                        <RadioButton GroupName="Cuisine" Content="American" Margin="0,5"/>
+                        <RadioButton GroupName="Cuisine" Content="Sushi" Margin="0,5"/>
+                        <RadioButton GroupName="Cuisine" Content="Pizza" Margin="0,5"/>
+                        <RadioButton GroupName="Cuisine" Content="SeaFood" Margin="0,5"/>
+                    </StackPanel>
+                </Expander>
+
+                <!-- Distance Filter -->
+                <Expander Header="Distance" Margin="0,5">
+                    <StackPanel>
+                        <RadioButton GroupName="Distance" Content="&lt;100m" Margin="0,5"/>
+                        <RadioButton GroupName="Distance" Content="&lt;500m" Margin="0,5"/>
+                        <RadioButton GroupName="Distance" Content="&lt;1km" Margin="0,5"/>
+                        <RadioButton GroupName="Distance" Content="Any" Margin="0,5"/>
+                    </StackPanel>
+                </Expander>
+
+                <!-- Open Status Filter -->
+                <Expander Header="Open" Margin="0,5">
+                    <StackPanel>
+                        <RadioButton GroupName="OpenStatus" Content="Open" Margin="0,5"/>
+                        <RadioButton GroupName="OpenStatus" Content="Closed" Margin="0,5"/>
+                    </StackPanel>
+                </Expander>
+
+                <!-- Pet-Friendly Filter -->
+                <Expander Header="Pet-Friendly" Margin="0,5">
+                    <StackPanel>
+                        <RadioButton GroupName="PetFriendly" Content="Yes" Margin="0,5"/>
+                        <RadioButton GroupName="PetFriendly" Content="No" Margin="0,5"/>
+                    </StackPanel>
+                </Expander>
+
+                <Button Content="Search" Width="100" Margin="0,20,0,0" HorizontalAlignment="Left" Background="#2196F3" Foreground="White"/>
+            </StackPanel>
+
+            <!-- Middle Panel with Filter Results -->
+            <StackPanel Grid.Column="1" Margin="10">
+                <WrapPanel Margin="0,0,0,10">
+                    <TextBlock Text="Pizza" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
+                    <TextBlock Text="Fast Food" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
+                    <TextBlock Text="&lt;100m" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
+                    <TextBlock Text="Open" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
+                    <TextBlock Text="Pet-Friendly" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
+                </WrapPanel>
+
+                <!-- ScrollViewer for Restaurant List -->
+                <ScrollViewer Height="400" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10">
+                    <StackPanel>
+                        <!-- Restaurant 1 -->
+                        <Border BorderBrush="#BDBDBD" BorderThickness="1" Padding="20" Margin="0,0,0,10" Height="150">
+                            <StackPanel>
+                                <TextBlock Text="The Urban Grill" FontWeight="Bold" FontSize="18"/>
+                                <TextBlock Text="A modern eatery offering a fusion of American and Mediterranean flavors, with a focus on grilled meats and seafood. Perfect for casual dining with a stylish atmosphere." TextWrapping="Wrap" FontSize="14"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Restaurant 2 -->
+                        <Border BorderBrush="#BDBDBD" BorderThickness="1" Padding="20" Margin="0,0,0,10" Height="150">
+                            <StackPanel>
+                                <TextBlock Text="Bella Cucina" FontWeight="Bold" FontSize="18"/>
+                                <TextBlock Text="A cozy Italian bistro known for its homemade pasta, wood-fired pizza, and rich espresso. Offers an authentic taste of Italy with a warm ambiance." TextWrapping="Wrap" FontSize="14"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Restaurant 3 -->
+                        <Border BorderBrush="#BDBDBD" BorderThickness="1" Padding="20" Margin="0,0,0,10" Height="150">
+                            <StackPanel>
+                                <TextBlock Text="Sushi Zen" FontWeight="Bold" FontSize="18"/>
+                                <TextBlock Text="A traditional Japanese sushi bar offering the freshest fish and creative rolls. A peaceful, minimalist dining experience with quality craftsmanship." TextWrapping="Wrap" FontSize="14"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Restaurant 4 -->
+                        <Border BorderBrush="#BDBDBD" BorderThickness="1" Padding="20" Margin="0,0,0,10" Height="150">
+                            <StackPanel>
+                                <TextBlock Text="The Spice House" FontWeight="Bold" FontSize="18"/>
+                                <TextBlock Text="A vibrant Indian restaurant offering curries, tandoori dishes, and freshly baked naan. A go-to spot for lovers of bold, aromatic Indian cuisine." TextWrapping="Wrap" FontSize="14"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Restaurant 5 -->
+                        <Border BorderBrush="#BDBDBD" BorderThickness="1" Padding="20" Margin="0,0,0,10" Height="150">
+                            <StackPanel>
+                                <TextBlock Text="Sea Breeze Café" FontWeight="Bold" FontSize="18"/>
+                                <TextBlock Text="A seafood-focused café with fresh catches from grilled salmon to fish and chips. Relaxed, nautical theme ideal for light, refreshing meals." TextWrapping="Wrap" FontSize="14"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Restaurant 6 -->
+                        <Border BorderBrush="#BDBDBD" BorderThickness="1" Padding="20" Margin="0,0,0,10" Height="150">
+                            <StackPanel>
+                                <TextBlock Text="Steakhouse 56" FontWeight="Bold" FontSize="18"/>
+                                <TextBlock Text="A premium steakhouse serving perfectly aged cuts of beef, accompanied by gourmet sides and sauces. A sophisticated dining experience for steak connoisseurs." TextWrapping="Wrap" FontSize="14"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+
+            <!-- Right Panel with Image -->
+            <Border Grid.Column="2" Background="#C8E6C9" Margin="10" BorderBrush="#388E3C" BorderThickness="1">
+                <!-- Image for Map or Placeholder -->
+                <Image Source="file:///D:/photo_2025.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

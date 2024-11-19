@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Yh5kx+Ybz4fAX43vIgZYdJQ0S6GiFr79g9qoq2V/t4yuX8/r3KyYqRENkIlWAVMmRAIHUnfrkKAgaBXwzYwU3w==",
+  "success": true,
+  "projectFilePath": "D:\\lab\\lab\\ConsoleApp1\\Cibuu.BLL\\Cibuu.BLL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mahlo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Mahlo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Mahlo\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
