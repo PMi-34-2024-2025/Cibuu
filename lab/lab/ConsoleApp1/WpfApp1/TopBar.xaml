@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WpfApp1.TopBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+        <Button Content="CIBUU" Width="80" Height="30" Margin="5" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C"/>
+        <ComboBox Width="50" Height="30" Margin="5" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C">
+            <ComboBoxItem Content="Lviv" Background="#1976D2" Foreground="White"/>
+            <ComboBoxItem Content="Kyiv" Background="#1976D2" Foreground="White"/>
+            <ComboBoxItem Content="Odessa" Background="#1976D2" Foreground="White"/>
+        </ComboBox>
+        <TextBox Width="200" Height="30" Margin="5" Text="search" Foreground="Gray" GotFocus="RemoveText" LostFocus="AddText" Background="#E3F2FD"/>
+        <Button Content="Recommendations" Click="OpenRecommendations_Click" Width="150" Height="30" Margin="5" Background="#2196F3" Foreground="White"/>
+        <Button Content="Search" Click="OpenSearchPage_Click" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+        <Button Content="Sign up" Click="SignUp_Click" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+        <Button Content="Sign in" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
+    </StackPanel>
+</UserControl>

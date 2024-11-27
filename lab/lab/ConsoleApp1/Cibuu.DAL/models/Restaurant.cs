@@ -7,5 +7,7 @@
         public string Description { get; set; }
         public string[] Reviews { get; set; }
         public string Location { get; set; }
+        public string Cuisine { get; set; }  // Додано властивість Cuisine
+
     }
 }
