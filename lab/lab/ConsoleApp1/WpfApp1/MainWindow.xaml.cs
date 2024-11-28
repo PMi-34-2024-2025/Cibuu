@@ -30,24 +30,20 @@ namespace WpfApp1
                 textBox.Foreground = Brushes.Gray;
             }
         }
+
         private void OpenSearchPage_Click(object sender, RoutedEventArgs e)
         {
-            // Відкриває нове вікно
-            SearchPage searchPage = new SearchPage();
-            searchPage.Owner = this; // Установлює батьківське вікно (необов'язково)
-            searchPage.Show();
+            MainFrame.Navigate(new SearchPage());
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            SearchPage searchPage = new SearchPage();
-            searchPage.Show();
-        }
-        private void OpenRecommendations_Click(object sender, RoutedEventArgs e)
-        {
-            RecommendationsPage recommendationsPage = new RecommendationsPage();
-            recommendationsPage.Show();
+            MainFrame.Navigate(new RegistrationPage());
         }
 
+        private void OpenRecommendations_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new RecommendationsPage());
+        }
     }
 }

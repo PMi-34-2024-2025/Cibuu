@@ -4,14 +4,14 @@ using System.Windows.Media;
 
 namespace WpfApp1
 {
-    public partial class RecommendationsPage : Window
+    public partial class RecommendationsPage : Page
     {
         public RecommendationsPage()
         {
             InitializeComponent();
         }
 
-        // Метод для очищення тексту в полі TextBox при фокусі
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ TextBox пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         private void RemoveText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -22,7 +22,7 @@ namespace WpfApp1
             }
         }
 
-        // Метод для відновлення тексту в полі TextBox при втраті фокусу
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ TextBox пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         private void AddText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
