@@ -62,5 +62,15 @@ namespace WpfApp1
                 mainWindow.MainFrame.Navigate(new RegistrationPage());
             }
         }
+        private void OpenAdminPanel_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Navigate(new AdminPanel());
+            }
+        }
+
+
     }
 }

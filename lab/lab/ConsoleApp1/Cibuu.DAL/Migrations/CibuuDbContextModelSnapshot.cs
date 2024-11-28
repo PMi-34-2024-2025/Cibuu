@@ -40,7 +40,7 @@ namespace Cibuu.DAL.Migrations
 
                     b.HasKey("AdminId");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("Cibuu.DAL.models.Restaurant", b =>
@@ -69,7 +69,7 @@ namespace Cibuu.DAL.Migrations
 
                     b.HasKey("RestaurantId");
 
-                    b.ToTable("Restaurants");
+                    b.ToTable("Restaurants", (string)null);
                 });
 
             modelBuilder.Entity("Cibuu.DAL.models.Review", b =>
@@ -98,7 +98,7 @@ namespace Cibuu.DAL.Migrations
 
                     b.HasKey("ReviewId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("Cibuu.DAL.models.User", b =>
@@ -123,7 +123,7 @@ namespace Cibuu.DAL.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }
