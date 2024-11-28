@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Cibuu.DAL.models;
+using Cibuu.DAL;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfApp1
@@ -56,31 +58,44 @@ namespace WpfApp1
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            if (UsernameTextBox.Text == "Ім'я користувача" || string.IsNullOrWhiteSpace(UsernameTextBox.Text))
+            string username = UsernameTextBox.Text;
+            string email = EmailTextBox.Text;
+            string password = PasswordBox.Password;
+
+            // Перевірка заповнення
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Ім'я користувача є обов'язковим.");
+                MessageBox.Show("Усі поля мають бути заповнені.");
                 return;
             }
 
-            if (EmailTextBox.Text == "Email" || string.IsNullOrWhiteSpace(EmailTextBox.Text) || !EmailTextBox.Text.Contains("@"))
+            try
             {
-                MessageBox.Show("Введіть коректний email.");
-                return;
-            }
+                using (var context = new CibuuDbContext())
+                {
+                    // Додаємо нового користувача
+                    var newUser = new User
+                    {
+                        Username = username,
+                        Email = email,
+                        FavoritePlaces = new string[] { } // Пустий список
+                    };
+                    context.Users.Add(newUser);
+                    context.SaveChanges();
+                }
 
-            if (string.IsNullOrWhiteSpace(PasswordBox.Password) || PasswordBox.Tag.ToString() == "Пароль")
+                MessageBox.Show("Реєстрація успішна!");
+                MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+                if (mainWindow != null)
+                {
+                    mainWindow.MainFrame.Navigate(new SearchPage());
+                }
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Пароль є обов'язковим.");
-                return;
+                MessageBox.Show($"Помилка реєстрації: {ex.Message}");
             }
-
-            if (PasswordBox.Password.Length < 6)
-            {
-                MessageBox.Show("Пароль має містити принаймні 6 символів.");
-                return;
-            }
-
-            MessageBox.Show("Реєстрація успішна!");
         }
+
     }
 }

@@ -58,7 +58,8 @@
                     </StackPanel>
                 </Expander>
 
-                <Button Content="Search" Width="100" Margin="0,20,0,0" HorizontalAlignment="Left" Background="#2196F3" Foreground="White"/>
+                <Button Content="Search" Width="100" Margin="0,20,0,0" HorizontalAlignment="Left" 
+        Background="#2196F3" Foreground="White" Click="SearchButton_Click"/>
             </StackPanel>
 
             <!-- Middle Panel with Filter Results -->
