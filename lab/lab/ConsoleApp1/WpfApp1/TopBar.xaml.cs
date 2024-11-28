@@ -6,12 +6,12 @@ namespace WpfApp1
 {
     public partial class TopBar : UserControl
     {
+        public event EventHandler CIBUUClicked;
         public TopBar()
         {
             InitializeComponent();
         }
 
-        // Метод для видалення тексту з поля пошуку
         private void RemoveText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -22,7 +22,6 @@ namespace WpfApp1
             }
         }
 
-        // Метод для додавання тексту до поля пошуку, якщо воно пусте
         private void AddText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -33,7 +32,6 @@ namespace WpfApp1
             }
         }
 
-        // Метод для переходу до сторінки рекомендацій
         private void OpenRecommendations_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
@@ -43,7 +41,6 @@ namespace WpfApp1
             }
         }
 
-        // Метод для переходу до сторінки пошуку
         private void OpenSearchPage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
@@ -53,7 +50,6 @@ namespace WpfApp1
             }
         }
 
-        // Метод для переходу до сторінки реєстрації
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
@@ -69,6 +65,10 @@ namespace WpfApp1
             {
                 mainWindow.MainFrame.Navigate(new AdminPanel());
             }
+        }
+        private void CIBUUButton_Click(object sender, RoutedEventArgs e)
+        {
+            CIBUUClicked?.Invoke(this, EventArgs.Empty);
         }
 
 

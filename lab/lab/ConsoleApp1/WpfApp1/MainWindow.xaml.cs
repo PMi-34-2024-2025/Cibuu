@@ -9,7 +9,16 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new MainPage());
+            
+            TopBar.CIBUUClicked += TopBar_CIBUUClicked;
         }
+
+        private void TopBar_CIBUUClicked(object sender, EventArgs e)
+        {
+            MainFrame.Navigate(new MainPage());
+        }
+
 
         public void RemoveText(object sender, RoutedEventArgs e)
         {
