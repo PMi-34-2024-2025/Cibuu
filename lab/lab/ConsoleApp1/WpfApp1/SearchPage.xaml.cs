@@ -72,9 +72,9 @@ namespace WpfApp1
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            // Приклад фільтрації на основі типу кухні
             string selectedCuisine = null;
 
+            // Отримуємо обраний тип кухні
             StackPanel cuisineStackPanel = (this.FindName("CuisineExpander") as Expander)?.Content as StackPanel;
 
             if (cuisineStackPanel != null)
@@ -89,16 +89,19 @@ namespace WpfApp1
                 }
             }
 
-            // Виконуємо фільтрацію
+            // Фільтруємо ресторани
             var filteredRestaurants = _restaurants;
             if (!string.IsNullOrEmpty(selectedCuisine))
             {
-                filteredRestaurants = _restaurants.Where(r => r.Description.Contains(selectedCuisine)).ToList();
+                filteredRestaurants = _restaurants
+                    .Where(r => r.Description.Contains(selectedCuisine, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
             }
 
-            // Оновлюємо джерело даних для ListBox
+            // Оновлюємо список
             RestaurantList.ItemsSource = filteredRestaurants;
         }
+
 
 
 
