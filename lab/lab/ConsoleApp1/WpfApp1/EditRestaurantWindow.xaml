@@ -19,6 +19,9 @@
             <TextBlock Text="Рейтинг" Margin="0,0,0,5"/>
             <TextBox x:Name="RatingTextBox" Margin="0,0,0,10"/>
 
+            <CheckBox x:Name="IsOpenCheckBox" Content="Відкрито" Margin="0,0,0,10"/>
+            <CheckBox x:Name="PetFriendlyCheckBox" Content="Pet Friendly" Margin="0,0,0,10"/>
+
             <Button Content="Зберегти" Width="100" HorizontalAlignment="Center" Click="SaveButton_Click"/>
         </StackPanel>
     </Grid>

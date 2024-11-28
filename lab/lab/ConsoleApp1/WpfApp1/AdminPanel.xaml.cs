@@ -24,23 +24,17 @@ namespace WpfApp1
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            var newRestaurant = new Restaurant
+            var newRestaurant = new Restaurant(); // Порожній об'єкт для заповнення
+            var addWindow = new EditRestaurantWindow(newRestaurant);
+            if (addWindow.ShowDialog() == true)
             {
-                Name = "Новий заклад",
-                Description = "Опис закладу",
-                Cuisine = "Тип кухні",
-                Location = "Локація",
-                Rating = 0.0,
-                Distance = 0.0,
-                IsOpen = false,
-                PetFriendly = false,
-                Reviews = new string[] { }
-            };
-            _context.Restaurants.Add(newRestaurant);
-            _context.SaveChanges();
-            LoadRestaurants();
-            MessageBox.Show("Заклад додано!");
+                _context.Restaurants.Add(newRestaurant); // Додаємо до бази
+                _context.SaveChanges();
+                LoadRestaurants(); // Оновлюємо список
+                MessageBox.Show("Заклад додано!");
+            }
         }
+
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {

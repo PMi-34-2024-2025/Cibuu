@@ -12,21 +12,24 @@ namespace WpfApp1
             InitializeComponent();
             Restaurant = restaurant;
 
-            // Заповнюємо поля даними закладу
+            // Ініціалізуємо поля
             NameTextBox.Text = Restaurant.Name;
             DescriptionTextBox.Text = Restaurant.Description;
             CuisineTextBox.Text = Restaurant.Cuisine;
             LocationTextBox.Text = Restaurant.Location;
             RatingTextBox.Text = Restaurant.Rating.ToString();
+            IsOpenCheckBox.IsChecked = Restaurant.IsOpen;
+            PetFriendlyCheckBox.IsChecked = Restaurant.PetFriendly;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // Оновлюємо дані закладу
+            // Зберігаємо значення
             Restaurant.Name = NameTextBox.Text;
             Restaurant.Description = DescriptionTextBox.Text;
             Restaurant.Cuisine = CuisineTextBox.Text;
             Restaurant.Location = LocationTextBox.Text;
+
             if (double.TryParse(RatingTextBox.Text, out double rating))
             {
                 Restaurant.Rating = rating;
@@ -37,7 +40,10 @@ namespace WpfApp1
                 return;
             }
 
-            DialogResult = true; // Закриваємо вікно з успішним результатом
+            Restaurant.IsOpen = IsOpenCheckBox.IsChecked == true;
+            Restaurant.PetFriendly = PetFriendlyCheckBox.IsChecked == true;
+
+            DialogResult = true; // Закриваємо вікно
         }
     }
 }
