@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cibuu.DAL\Cibuu.DAL.csproj" />
+    <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
   </ItemGroup>
 
 </Project>

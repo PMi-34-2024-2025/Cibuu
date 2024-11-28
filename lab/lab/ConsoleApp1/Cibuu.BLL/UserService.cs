@@ -2,6 +2,7 @@
 using Cibuu.DAL;
 using System.Collections.Generic;
 using System.Linq;
+using Cibuu.DAL.Utilities;
 
 public class UserService
 {
@@ -33,11 +34,15 @@ public class UserService
 
         for (int i = 0; i < 10; i++)
         {
+            var password = "Password" + i; // Тимчасовий пароль
+            var passwordHash = PasswordHasher.HashPassword(password);
+
             users.Add(new User
             {
                 Username = names[random.Next(names.Length)],
                 Email = emails[random.Next(emails.Length)],
-                FavoritePlaces = new[] { "Place1", "Place2" }
+                FavoritePlaces = new[] { "Place1", "Place2" },
+                PasswordHash = passwordHash
             });
         }
 
@@ -45,5 +50,26 @@ public class UserService
         _context.SaveChanges();
 
         Console.WriteLine("Таблиця Users заповнена випадковими даними.");
+    }
+
+    public void RegisterUser(string username, string email, string password)
+    {
+        if (_context.Users.Any(u => u.Email == email))
+        {
+            throw new InvalidOperationException("Користувач із таким email вже існує.");
+        }
+
+        var passwordHash = PasswordHasher.HashPassword(password);
+
+        var newUser = new User
+        {
+            Username = username,
+            Email = email,
+            PasswordHash = passwordHash,
+            FavoritePlaces = new string[] { } // Пустий список улюблених місць
+        };
+
+        _context.Users.Add(newUser);
+        _context.SaveChanges();
     }
 }
