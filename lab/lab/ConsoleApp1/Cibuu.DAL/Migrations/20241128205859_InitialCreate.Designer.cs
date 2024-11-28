@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cibuu.DAL.Migrations
 {
     [DbContext(typeof(CibuuDbContext))]
-    [Migration("20241127133423_InitialCreate")]
+    [Migration("20241128205859_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -44,35 +44,6 @@ namespace Cibuu.DAL.Migrations
                     b.HasKey("AdminId");
 
                     b.ToTable("Admins");
-                });
-
-            modelBuilder.Entity("Cibuu.DAL.models.Restaurant", b =>
-                {
-                    b.Property<int>("RestaurantId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RestaurantId"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.PrimitiveCollection<string[]>("Reviews")
-                        .IsRequired()
-                        .HasColumnType("text[]");
-
-                    b.HasKey("RestaurantId");
-
-                    b.ToTable("Restaurants");
                 });
 
             modelBuilder.Entity("Cibuu.DAL.models.Review", b =>
@@ -127,6 +98,51 @@ namespace Cibuu.DAL.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Restaurant", b =>
+                {
+                    b.Property<int>("RestaurantId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RestaurantId"));
+
+                    b.Property<string>("Cuisine")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double>("Distance")
+                        .HasColumnType("double precision");
+
+                    b.Property<bool>("IsOpen")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("PetFriendly")
+                        .HasColumnType("boolean");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("double precision");
+
+                    b.PrimitiveCollection<string[]>("Reviews")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.HasKey("RestaurantId");
+
+                    b.ToTable("Restaurants");
                 });
 #pragma warning restore 612, 618
         }

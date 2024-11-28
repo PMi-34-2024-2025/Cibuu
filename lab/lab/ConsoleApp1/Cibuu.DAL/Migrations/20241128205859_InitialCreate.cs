@@ -35,7 +35,12 @@ namespace Cibuu.DAL.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     Reviews = table.Column<string[]>(type: "text[]", nullable: false),
-                    Location = table.Column<string>(type: "text", nullable: false)
+                    Location = table.Column<string>(type: "text", nullable: false),
+                    Cuisine = table.Column<string>(type: "text", nullable: false),
+                    Distance = table.Column<double>(type: "double precision", nullable: false),
+                    IsOpen = table.Column<bool>(type: "boolean", nullable: false),
+                    PetFriendly = table.Column<bool>(type: "boolean", nullable: false),
+                    Rating = table.Column<double>(type: "double precision", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cibuu.BLL\Cibuu.BLL.csproj" />
+    <ProjectReference Include="..\Cibuu.DAL\Cibuu.DAL.csproj" />
+    <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
   </ItemGroup>
 
 </Project>
