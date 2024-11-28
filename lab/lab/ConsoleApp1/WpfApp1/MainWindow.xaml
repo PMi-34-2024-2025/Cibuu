@@ -9,10 +9,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- TopBar control -->
-        <local:TopBar Grid.Row="0"/>
+        <local:TopBar x:Name="TopBar" Grid.Row="0"/>
 
-        <!-- Main content area for displaying pages -->
+
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
