@@ -17,11 +17,12 @@
 
             <!-- Left Panel with Filters -->
             <StackPanel Background="#F3F4F6" Margin="10" Grid.Column="0">
-                <Button Content="Cancel" Width="80" Margin="0,10,0,10" HorizontalAlignment="Left" Background="#E53935" Foreground="White"/>
+                <Button Content="Cancel" Width="80" Margin="0,10,0,10" HorizontalAlignment="Left" 
+                        Background="#E53935" Foreground="White" Click="CancelButton_Click"/>
                 <TextBlock Text="Filters" FontSize="16" FontWeight="Bold" Margin="0,10,0,10"/>
 
                 <!-- Cuisine Filter -->
-                <Expander Header="Cuisine" Margin="0,5">
+                <Expander x:Name="CuisineExpander" Header="Cuisine" Margin="0,5">
                     <StackPanel>
                         <RadioButton GroupName="Cuisine" Content="Fast Food" Margin="0,5"/>
                         <RadioButton GroupName="Cuisine" Content="Italian" Margin="0,5"/>
@@ -43,7 +44,7 @@
                 </Expander>
 
                 <!-- Open Status Filter -->
-                <Expander Header="Open" Margin="0,5">
+                <Expander x:Name="OpenExpander" Header="Open" Margin="0,5">
                     <StackPanel>
                         <RadioButton GroupName="OpenStatus" Content="Open" Margin="0,5"/>
                         <RadioButton GroupName="OpenStatus" Content="Closed" Margin="0,5"/>
@@ -51,7 +52,7 @@
                 </Expander>
 
                 <!-- Pet-Friendly Filter -->
-                <Expander Header="Pet-Friendly" Margin="0,5">
+                <Expander x:Name="PetFriendlyExpander" Header="Pet-Friendly" Margin="0,5">
                     <StackPanel>
                         <RadioButton GroupName="PetFriendly" Content="Yes" Margin="0,5"/>
                         <RadioButton GroupName="PetFriendly" Content="No" Margin="0,5"/>
@@ -59,18 +60,25 @@
                 </Expander>
 
                 <Button Content="Search" Width="100" Margin="0,20,0,0" HorizontalAlignment="Left" 
-        Background="#2196F3" Foreground="White" Click="SearchButton_Click"/>
+                        Background="#2196F3" Foreground="White" Click="SearchButton_Click"/>
             </StackPanel>
+
+
+
 
             <!-- Middle Panel with Filter Results -->
             <StackPanel Grid.Column="1" Margin="10">
-                <WrapPanel Margin="0,0,0,10">
-                    <TextBlock Text="Pizza" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
-                    <TextBlock Text="Fast Food" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
-                    <TextBlock Text="&lt;100m" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
-                    <TextBlock Text="Open" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
-                    <TextBlock Text="Pet-Friendly" Foreground="#2196F3" Margin="0,0,10,0" Cursor="Hand"/>
+                <!-- Buttons for Sorting -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <TextBlock Text="Sort by:" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <Button Content="Name (A-Z)" Width="100" Margin="0,0,10,0" Background="#2196F3" Foreground="White" Click="SortByNameAscending_Click"/>
+                    <Button Content="Name (Z-A)" Width="100" Margin="0,0,10,0" Background="#2196F3" Foreground="White" Click="SortByNameDescending_Click"/>
+                </StackPanel>
+
+                <WrapPanel x:Name="SelectedFiltersTextBlock" Margin="0,0,0,10">
+                    <!-- Фільтри будуть оновлюватись динамічно -->
                 </WrapPanel>
+
 
                 <!-- ScrollViewer for Restaurant List -->
                 <ListBox x:Name="RestaurantList" Grid.Column="1" Margin="10">
@@ -92,9 +100,10 @@
                 </ListBox>
             </StackPanel>
 
+
+
             <!-- Right Panel with Image -->
             <Border Grid.Column="2" Background="#C8E6C9" Margin="10" BorderBrush="#388E3C" BorderThickness="1">
-                <!-- Image for Map or Placeholder -->
                 <Image Source="file:///D:/photo_2025.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"/>
             </Border>
         </Grid>

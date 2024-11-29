@@ -1,8 +1,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
-using System.Windows.Media; 
+using System.Windows.Media;
 using Cibuu.DAL.models;
+using Cibuu.DAL;
 
 namespace WpfApp1
 {
@@ -14,28 +15,28 @@ namespace WpfApp1
         {
             InitializeComponent();
             LoadRestaurants();
-            RestaurantList.ItemsSource = _restaurants;
         }
+
 
         private void LoadRestaurants()
         {
-            _restaurants = new List<Restaurant>
+            using (var context = new CibuuDbContext())
             {
-                new Restaurant { Name = "The Urban Grill", Description = "Fusion of American and Mediterranean flavors", Location = "Downtown" },
-                new Restaurant { Name = "Bella Cucina", Description = "Homemade pasta and pizza", Location = "Central Avenue" },
-                new Restaurant { Name = "Sushi Zen", Description = "Fresh fish and creative rolls", Location = "Main Street" },
-                new Restaurant { Name = "The Spice House", Description = "Aromatic Indian cuisine", Location = "Old Town" },
-                new Restaurant { Name = "Sea Breeze Café", Description = "Seafood-focused café", Location = "Near the beach" },
-                new Restaurant { Name = "Steakhouse 56", Description = "Premium steakhouse", Location = "Business District" }
-            };
+                // Завантажуємо всі ресторани з бази даних
+                _restaurants = context.Restaurants.ToList();
+            }
+
+            // Прив’язуємо дані до списку
+            RestaurantList.ItemsSource = _restaurants;
         }
+
 
         private void AddToFavorites_Click(object sender, RoutedEventArgs e)
         {
             if (RestaurantList.SelectedItem is Restaurant selectedRestaurant)
             {
                 MessageBox.Show($"{selectedRestaurant.Name} додано до улюблених!");
-                
+                // Логіка додавання до улюблених (приклад: додати в локальний список улюблених)
             }
         }
 
@@ -44,10 +45,11 @@ namespace WpfApp1
             if (RestaurantList.SelectedItem is Restaurant selectedRestaurant)
             {
                 MessageBox.Show($"Детальна інформація про {selectedRestaurant.Name}:\n\n{selectedRestaurant.Description}\nРозташування: {selectedRestaurant.Location}");
-                
+                // Логіка переходу до сторінки деталей
             }
         }
 
+        // Метод для видалення тексту з поля пошуку
         private void RemoveText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -58,6 +60,9 @@ namespace WpfApp1
             }
         }
 
+
+
+        // Метод для додавання тексту до поля пошуку, якщо воно пусте
         private void AddText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -70,11 +75,13 @@ namespace WpfApp1
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            // Отримуємо фільтри
             string selectedCuisine = null;
+            bool? isOpen = null;
+            bool? isPetFriendly = null;
 
-            StackPanel cuisineStackPanel = (this.FindName("CuisineExpander") as Expander)?.Content as StackPanel;
-
-            if (cuisineStackPanel != null)
+            // Отримуємо обраний тип кухні
+            if (CuisineExpander.Content is StackPanel cuisineStackPanel)
             {
                 foreach (var child in cuisineStackPanel.Children)
                 {
@@ -86,15 +93,165 @@ namespace WpfApp1
                 }
             }
 
-            var filteredRestaurants = _restaurants;
-            if (!string.IsNullOrEmpty(selectedCuisine))
+            // Фільтр "Відкрито/Закрито"
+            if (OpenExpander.Content is StackPanel openStackPanel)
             {
-                filteredRestaurants = _restaurants
-                    .Where(r => r.Description.Contains(selectedCuisine, StringComparison.OrdinalIgnoreCase))
-                    .ToList();
+                foreach (var child in openStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton && radioButton.IsChecked == true)
+                    {
+                        isOpen = radioButton.Content.ToString() == "Open";
+                        break;
+                    }
+                }
             }
 
-            RestaurantList.ItemsSource = filteredRestaurants;
+            // Фільтр "Pet-Friendly"
+            if (PetFriendlyExpander.Content is StackPanel petFriendlyStackPanel)
+            {
+                foreach (var child in petFriendlyStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton && radioButton.IsChecked == true)
+                    {
+                        isPetFriendly = radioButton.Content.ToString() == "Yes";
+                        break;
+                    }
+                }
+            }
+
+            // Фільтруємо дані
+            using (var context = new CibuuDbContext())
+            {
+                var filteredRestaurants = context.Restaurants.AsQueryable();
+
+                if (!string.IsNullOrEmpty(selectedCuisine))
+                    filteredRestaurants = filteredRestaurants.Where(r => r.Cuisine.Contains(selectedCuisine));
+
+                if (isOpen.HasValue)
+                    filteredRestaurants = filteredRestaurants.Where(r => r.IsOpen == isOpen.Value);
+
+                if (isPetFriendly.HasValue)
+                    filteredRestaurants = filteredRestaurants.Where(r => r.PetFriendly == isPetFriendly.Value);
+
+                // Оновлюємо список
+                RestaurantList.ItemsSource = filteredRestaurants.ToList();
+            }
+            UpdateSelectedFilters();
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Скидаємо фільтри
+            if (CuisineExpander.Content is StackPanel cuisineStackPanel)
+            {
+                foreach (var child in cuisineStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton)
+                    {
+                        radioButton.IsChecked = false;
+                    }
+                }
+            }
+
+            if (OpenExpander.Content is StackPanel openStackPanel)
+            {
+                foreach (var child in openStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton)
+                    {
+                        radioButton.IsChecked = false;
+                    }
+                }
+            }
+
+            if (PetFriendlyExpander.Content is StackPanel petFriendlyStackPanel)
+            {
+                foreach (var child in petFriendlyStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton)
+                    {
+                        radioButton.IsChecked = false;
+                    }
+                }
+            }
+
+            // Відновлюємо повний список ресторанів
+            LoadRestaurants();
+            UpdateSelectedFilters();
+        }
+
+        private void UpdateSelectedFilters()
+        {
+            // Очищуємо попередні фільтри
+            SelectedFiltersTextBlock.Children.Clear();
+
+            // Отримуємо обраний тип кухні
+            if (CuisineExpander.Content is StackPanel cuisineStackPanel)
+            {
+                foreach (var child in cuisineStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton && radioButton.IsChecked == true)
+                    {
+                        AddFilterToWrapPanel(radioButton.Content.ToString());
+                    }
+                }
+            }
+
+            // Фільтр "Відкрито/Закрито"
+            if (OpenExpander.Content is StackPanel openStackPanel)
+            {
+                foreach (var child in openStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton && radioButton.IsChecked == true)
+                    {
+                        AddFilterToWrapPanel(radioButton.Content.ToString());
+                    }
+                }
+            }
+
+            // Фільтр "Pet-Friendly"
+            if (PetFriendlyExpander.Content is StackPanel petFriendlyStackPanel)
+            {
+                foreach (var child in petFriendlyStackPanel.Children)
+                {
+                    if (child is RadioButton radioButton && radioButton.IsChecked == true)
+                    {
+                        AddFilterToWrapPanel(radioButton.Content.ToString());
+                    }
+                }
+            }
+        }
+
+        // Додає текстовий фільтр до WrapPanel
+        private void AddFilterToWrapPanel(string filterText)
+        {
+            var textBlock = new TextBlock
+            {
+                Text = filterText,
+                Foreground = Brushes.Blue,
+                Margin = new Thickness(0, 0, 10, 0),
+                Cursor = System.Windows.Input.Cursors.Hand
+            };
+            SelectedFiltersTextBlock.Children.Add(textBlock);
+        }
+        private void SortByNameAscending_Click(object sender, RoutedEventArgs e)
+        {
+            if (_restaurants != null)
+            {
+                RestaurantList.ItemsSource = _restaurants.OrderBy(r => r.Name).ToList();
+            }
+        }
+
+        private void SortByNameDescending_Click(object sender, RoutedEventArgs e)
+        {
+            if (_restaurants != null)
+            {
+                RestaurantList.ItemsSource = _restaurants.OrderByDescending(r => r.Name).ToList();
+            }
+        }
+
+
+
     }
 }
+
