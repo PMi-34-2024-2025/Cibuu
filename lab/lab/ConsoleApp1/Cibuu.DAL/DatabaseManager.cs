@@ -1,5 +1,6 @@
-﻿using Npgsql;
-using System;
+﻿using Cibuu.DAL.Utilities;
+using System.Linq;
+using Npgsql;
 
 namespace Cibuu.DAL
 {
@@ -24,6 +25,19 @@ namespace Cibuu.DAL
             if (connection != null)
             {
                 connection.Close();
+            }
+        }
+
+        public static bool AuthenticateUser(string email, string username, string password)
+        {
+            using (var context = new CibuuDbContext()) 
+            {
+                var user = context.Users.FirstOrDefault(u => u.Email == email && u.Username == username);
+
+                if (user == null)
+                    return false;
+
+                return PasswordHasher.Verify(password, user.PasswordHash); 
             }
         }
     }

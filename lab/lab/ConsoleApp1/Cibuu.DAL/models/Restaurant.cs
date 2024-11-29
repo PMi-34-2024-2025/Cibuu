@@ -3,7 +3,7 @@
     public int RestaurantId { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public string[] Reviews { get; set; } = Array.Empty<string>(); // Встановлено значення за замовчуванням
+    public string[] Reviews { get; set; } = Array.Empty<string>(); 
     public string Location { get; set; }
     public string Cuisine { get; set; }
     public double Distance { get; set; }

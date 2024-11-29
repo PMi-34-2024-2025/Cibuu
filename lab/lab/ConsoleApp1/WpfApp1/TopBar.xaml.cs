@@ -7,6 +7,7 @@ namespace WpfApp1
     public partial class TopBar : UserControl
     {
         public event EventHandler CIBUUClicked;
+
         public TopBar()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace WpfApp1
                 mainWindow.MainFrame.Navigate(new RegistrationPage());
             }
         }
+
         private void OpenAdminPanel_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
@@ -66,11 +68,19 @@ namespace WpfApp1
                 mainWindow.MainFrame.Navigate(new AdminPanel());
             }
         }
+
         private void CIBUUButton_Click(object sender, RoutedEventArgs e)
         {
             CIBUUClicked?.Invoke(this, EventArgs.Empty);
         }
 
-
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Navigate(new SignInPage()); 
+            }
+        }
     }
 }
