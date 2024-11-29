@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 using Cibuu.DAL;
 using Cibuu.DAL.models;
 
@@ -9,7 +10,7 @@ namespace WpfApp1
     public partial class RestaurantPage : Page
     {
         private int _restaurantId;
-        private int _currentUserId = 1; // Замініть на реальну авторизацію, щоб отримати ID користувача
+        private int _currentUserId = 1;
 
         public RestaurantPage(int restaurantId)
         {
@@ -19,7 +20,6 @@ namespace WpfApp1
             LoadReviews();
         }
 
-        // Завантаження даних ресторану
         private void LoadRestaurantData()
         {
             using (var context = new CibuuDbContext())
@@ -37,7 +37,6 @@ namespace WpfApp1
             }
         }
 
-        // Завантаження відгуків
         private void LoadReviews()
         {
             using (var context = new CibuuDbContext())
@@ -47,12 +46,28 @@ namespace WpfApp1
                     .OrderByDescending(r => r.ReviewDate)
                     .ToList();
 
-                ReviewsContainer.ItemsSource = reviews; // Прив'язка до списку відгуків
+                ReviewsContainer.ItemsSource = reviews;
             }
         }
 
+        private void LikeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var animation = (Storyboard)FindResource("HeartAnimation");
+            animation.Begin();
+            FavoriteMessage.Visibility = Visibility.Visible;
 
-        // Збереження нового відгуку
+            var timer = new System.Windows.Threading.DispatcherTimer
+            {
+                Interval = System.TimeSpan.FromSeconds(2)
+            };
+            timer.Tick += (s, args) =>
+            {
+                FavoriteMessage.Visibility = Visibility.Collapsed;
+                timer.Stop();
+            };
+            timer.Start();
+        }
+
         private void SubmitReviewButton_Click(object sender, RoutedEventArgs e)
         {
             if (_currentUserId == 0)
@@ -69,29 +84,26 @@ namespace WpfApp1
 
             using (var context = new CibuuDbContext())
             {
-                var review = new Review
+                var newReview = new Review
                 {
-                    UserId = _currentUserId, // Замінити на реального користувача
+                    UserId = _currentUserId,
                     RestaurantId = _restaurantId,
-                    Text = ReviewTextBox.Text, // Це поле відповідає стовпцю "text"
-                    Rate = 5, // Можна додати механізм вибору рейтингу
-                    ReviewDate = DateTime.UtcNow // Зберігаємо час у форматі UTC
+                    Text = ReviewTextBox.Text,
+                    // Перетворення часу на UTC
+                    ReviewDate = DateTime.UtcNow
                 };
 
-                context.Reviews.Add(review);
+                context.Reviews.Add(newReview);
                 context.SaveChanges();
             }
 
+            // Очищаємо поле для коментаря
             ReviewTextBox.Clear();
-            LoadReviews(); // Перезавантажуємо список відгуків
+
+            // Перезавантажуємо список відгуків
+            LoadReviews();
+
             MessageBox.Show("Відгук успішно додано!");
-        }
-
-
-
-        private void LikeButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("You liked this restaurant! ❤️");
         }
 
     }
