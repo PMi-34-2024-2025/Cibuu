@@ -250,6 +250,18 @@ namespace WpfApp1
             }
         }
 
+        private void RestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (RestaurantList.SelectedItem is Restaurant selectedRestaurant)
+            {
+                // Переходимо на сторінку ресторану
+                var mainWindow = Window.GetWindow(this) as MainWindow;
+                if (mainWindow != null)
+                {
+                    mainWindow.MainFrame.Navigate(new RestaurantPage(selectedRestaurant.RestaurantId));
+                }
+            }
+        }
 
 
     }
