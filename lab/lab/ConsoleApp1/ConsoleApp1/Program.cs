@@ -8,7 +8,7 @@ class Program
     {
 
         // Рядок підключення до PostgreSQL (заміни дані на свої)
-        string connectionString = "Host=localhost;Username=postgres;Password=2004;Database=cibuu";
+        string connectionString = "Host=localhost;Username=postgres;Password=2005;Database=cibuu";
 
 
         using (var connection = new NpgsqlConnection(connectionString))

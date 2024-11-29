@@ -10,7 +10,22 @@
             <ComboBoxItem Content="Kyiv" Background="#1976D2" Foreground="White"/>
             <ComboBoxItem Content="Odessa" Background="#1976D2" Foreground="White"/>
         </ComboBox>
-        <TextBox Width="200" Height="30" Margin="5" Text="search" Foreground="Gray" GotFocus="RemoveText" LostFocus="AddText" Background="#E3F2FD"/>
+
+        <Grid>
+            <TextBox Width="200" Height="30" Margin="5" Text="пошук" 
+                     Foreground="Gray" GotFocus="RemoveText" LostFocus="AddText" 
+                     TextChanged="SearchTextBox_TextChanged" Background="#E3F2FD"/>
+            <ListBox x:Name="SearchResultsList" Width="200" Margin="0,35,0,0"
+                     Visibility="Collapsed" Background="White" Foreground="Black"
+                     BorderBrush="Gray" BorderThickness="1" MaxHeight="200">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" MouseLeftButtonUp="SearchResult_Click"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
         <Button Content="Recommendations" Click="OpenRecommendations_Click" Width="150" Height="30" Margin="5" Background="#2196F3" Foreground="White"/>
         <Button Content="Search" Click="OpenSearchPage_Click" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
         <Button Content="Sign up" Click="SignUp_Click" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>

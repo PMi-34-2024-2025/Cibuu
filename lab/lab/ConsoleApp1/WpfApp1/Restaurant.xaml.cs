@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 using Cibuu.DAL;
 using Cibuu.DAL.models;  // Модель для ресторану
 using Microsoft.EntityFrameworkCore;
@@ -40,6 +42,37 @@ namespace WpfApp1
         // Обробник для лайку ресторану
         private void LikeButton_Click(object sender, RoutedEventArgs e)
         {
+            // Запуск анімації зміни кольору
+            var heartColorAnimation = (Storyboard)FindResource("HeartColorAnimation");
+            heartColorAnimation.Begin();
+
+            // Анімація для зміни розміру серця
+            var heartAnimation = new Storyboard();
+            var scaleX = new DoubleAnimation
+            {
+                From = 1,
+                To = 1.5,
+                Duration = new Duration(System.TimeSpan.FromSeconds(0.2)),
+                AutoReverse = true
+            };
+
+            var scaleY = new DoubleAnimation
+            {
+                From = 1,
+                To = 1.5,
+                Duration = new Duration(System.TimeSpan.FromSeconds(0.2)),
+                AutoReverse = true
+            };
+
+            Storyboard.SetTarget(scaleX, LikeButton);
+            Storyboard.SetTarget(scaleY, LikeButton);
+            Storyboard.SetTargetProperty(scaleX, new PropertyPath("RenderTransform.ScaleX"));
+            Storyboard.SetTargetProperty(scaleY, new PropertyPath("RenderTransform.ScaleY"));
+            heartAnimation.Children.Add(scaleX);
+            heartAnimation.Children.Add(scaleY);
+
+            heartAnimation.Begin(); // Запуск анімації
+
             // Логіка для лайку (статична)
             MessageBox.Show("You liked this restaurant! ❤️");
 
@@ -89,7 +122,6 @@ namespace WpfApp1
                 }
             };
 
-           // ReviewList.Children.Add(newReviewBorder);
             ReviewTextBox.Clear();  // Очищаємо поле після відправки
         }
     }

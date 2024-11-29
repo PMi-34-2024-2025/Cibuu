@@ -14,7 +14,7 @@ namespace Cibuu.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            DbContextOptionsBuilder dbContextOptionsBuilder = optionsBuilder.UseNpgsql("Host=localhost;Database=cibuu;Username=postgres;Password='2004'");
+            DbContextOptionsBuilder dbContextOptionsBuilder = optionsBuilder.UseNpgsql("Host=localhost;Database=cibuu;Username=postgres;Password=2005");
 ;
         }
 
