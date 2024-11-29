@@ -7,7 +7,7 @@ class Program
     static void Main(string[] args)
     {
         // Рядок підключення до PostgreSQL (заміни дані на свої)
-        string connectionString = "Host=localhost;Username=postgres;Password=Vinzer1979;Database=cibuu";
+        string connectionString = "Host=localhost;Username=postgres;Password=23092005;Database=cibuu";
 
         using (var connection = new NpgsqlConnection(connectionString))
         {
