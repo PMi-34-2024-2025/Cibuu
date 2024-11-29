@@ -9,9 +9,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Верхня панель -->
         <local:TopBar x:Name="TopBar" Grid.Row="0"/>
 
-
+        <!-- Місце для відображення контенту -->
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        
+        
     </Grid>
 </Window>

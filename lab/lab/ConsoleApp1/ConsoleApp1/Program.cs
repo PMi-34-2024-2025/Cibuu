@@ -1,12 +1,11 @@
 ﻿using System;
-using Npgsql;  // Пакет для підключення до PostgreSQL
+using Npgsql;  
 using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Рядок підключення до PostgreSQL (заміни дані на свої)
         string connectionString = "Host=localhost;Username=postgres;Password=Vinzer1979;Database=cibuu";
 
         using (var connection = new NpgsqlConnection(connectionString))
@@ -14,13 +13,11 @@ class Program
             connection.Open();
             Console.WriteLine("Підключення до бази даних успішно встановлено.");
 
-            // Виклик методів для заповнення бази даними
             InsertRandomUsers(connection);
             InsertRandomRestaurants(connection);
             InsertRandomReviews(connection);
             InsertRandomAdmins(connection);
 
-            // Виклик методів для виведення даних
             PrintUsers(connection);
             PrintRestaurants(connection);
             PrintReviews(connection);
@@ -28,7 +25,6 @@ class Program
         }
     }
 
-    // Метод для виведення даних з таблиці Users
     static void PrintUsers(NpgsqlConnection connection)
     {
         string query = "SELECT * FROM Users";
@@ -45,7 +41,6 @@ class Program
         }
     }
 
-    // Метод для виведення даних з таблиці Restaurants
     static void PrintRestaurants(NpgsqlConnection connection)
     {
         string query = "SELECT * FROM Restaurants";
@@ -62,7 +57,6 @@ class Program
         }
     }
 
-    // Метод для виведення даних з таблиці Reviews
     static void PrintReviews(NpgsqlConnection connection)
     {
         string query = "SELECT * FROM Reviews";
@@ -79,7 +73,6 @@ class Program
         }
     }
 
-    // Метод для виведення даних з таблиці Admins
     static void PrintAdmins(NpgsqlConnection connection)
     {
         string query = "SELECT * FROM Admins";
@@ -96,7 +89,6 @@ class Program
         }
     }
 
-    // Метод для вставки випадкових даних у таблицю Users
     static void InsertRandomUsers(NpgsqlConnection connection)
     {
         string[] names = { "Alice", "Bob", "Charlie", "David", "Eva" };
@@ -116,7 +108,6 @@ class Program
         Console.WriteLine("Таблиця Users заповнена випадковими даними.");
     }
 
-    // Метод для вставки випадкових даних у таблицю Restaurants
     static void InsertRandomRestaurants(NpgsqlConnection connection)
     {
         string[] names = { "Restaurant A", "Restaurant B", "Restaurant C" };
@@ -136,16 +127,15 @@ class Program
         Console.WriteLine("Таблиця Restaurants заповнена випадковими даними.");
     }
 
-    // Метод для вставки випадкових даних у таблицю Reviews
     static void InsertRandomReviews(NpgsqlConnection connection)
     {
         Random random = new Random();
 
         for (int i = 0; i < 50; i++)
         {
-            int userId = random.Next(1, 51);  // Генеруємо випадковий user_id
-            int restaurantId = random.Next(1, 31);  // Генеруємо випадковий restaurant_id
-            int rate = random.Next(1, 6);  // Оцінка від 1 до 5
+            int userId = random.Next(1, 51);  
+            int restaurantId = random.Next(1, 31); 
+            int rate = random.Next(1, 6);  
             string query = $"INSERT INTO Reviews (user_id, restaurant_id, rate, text) VALUES ({userId}, {restaurantId}, {rate}, 'Great place!')";
             using (var command = new NpgsqlCommand(query, connection))
             {
@@ -155,7 +145,6 @@ class Program
         Console.WriteLine("Таблиця Reviews заповнена випадковими даними.");
     }
 
-    // Метод для вставки випадкових даних у таблицю Admins
     static void InsertRandomAdmins(NpgsqlConnection connection)
     {
         string[] roles = { "Manager", "Supervisor", "Admin" };

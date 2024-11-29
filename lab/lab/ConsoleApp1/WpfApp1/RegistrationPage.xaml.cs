@@ -64,14 +64,12 @@ namespace WpfApp1
             string email = EmailTextBox.Text;
             string password = PasswordBox.Password;
 
-            // Перевірка заповнення
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Усі поля мають бути заповнені.");
                 return;
             }
 
-            // Перевірка коректності email
             if (!IsValidEmail(email))
             {
                 MessageBox.Show("Неправильний формат email. Перевірте наявність '@' та домену.");
@@ -82,7 +80,6 @@ namespace WpfApp1
             {
                 using (var context = new CibuuDbContext())
                 {
-                    // Перевірка наявності користувача з таким же email
                     var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
                     if (existingUser != null)
                     {
@@ -91,19 +88,17 @@ namespace WpfApp1
                             "Email вже використовується",
                             MessageBoxButton.OK,
                             MessageBoxImage.Warning);
-                        return; // Зупиняємо процес реєстрації
+                        return; 
                     }
 
-                    // Хешування пароля
                     string passwordHash = PasswordHasher.HashPassword(password);
 
-                    // Додаємо нового користувача
                     var newUser = new User
                     {
                         Username = username,
                         Email = email,
                         PasswordHash = passwordHash,
-                        FavoritePlaces = new string[] { } // Пустий список
+                        FavoritePlaces = new string[] { } 
                     };
 
                     context.Users.Add(newUser);
@@ -112,7 +107,6 @@ namespace WpfApp1
 
                 MessageBox.Show("Реєстрація успішна!");
 
-                // Переходимо на іншу сторінку після успішної реєстрації (або залишаємося)
                 MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
                 if (mainWindow != null)
                 {

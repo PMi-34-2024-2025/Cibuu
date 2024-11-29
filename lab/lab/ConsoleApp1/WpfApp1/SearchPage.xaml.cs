@@ -1,7 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
-using System.Windows.Media; // Додано для роботи з кольорами
+using System.Windows.Media; 
 using Cibuu.DAL.models;
 
 namespace WpfApp1
@@ -35,7 +35,7 @@ namespace WpfApp1
             if (RestaurantList.SelectedItem is Restaurant selectedRestaurant)
             {
                 MessageBox.Show($"{selectedRestaurant.Name} додано до улюблених!");
-                // Логіка додавання до улюблених (приклад: додати в локальний список улюблених)
+                
             }
         }
 
@@ -44,11 +44,10 @@ namespace WpfApp1
             if (RestaurantList.SelectedItem is Restaurant selectedRestaurant)
             {
                 MessageBox.Show($"Детальна інформація про {selectedRestaurant.Name}:\n\n{selectedRestaurant.Description}\nРозташування: {selectedRestaurant.Location}");
-                // Логіка переходу до сторінки деталей
+                
             }
         }
 
-        // Метод для видалення тексту з поля пошуку
         private void RemoveText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -59,7 +58,6 @@ namespace WpfApp1
             }
         }
 
-        // Метод для додавання тексту до поля пошуку, якщо воно пусте
         private void AddText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -74,7 +72,6 @@ namespace WpfApp1
         {
             string selectedCuisine = null;
 
-            // Отримуємо обраний тип кухні
             StackPanel cuisineStackPanel = (this.FindName("CuisineExpander") as Expander)?.Content as StackPanel;
 
             if (cuisineStackPanel != null)
@@ -89,7 +86,6 @@ namespace WpfApp1
                 }
             }
 
-            // Фільтруємо ресторани
             var filteredRestaurants = _restaurants;
             if (!string.IsNullOrEmpty(selectedCuisine))
             {
@@ -98,12 +94,7 @@ namespace WpfApp1
                     .ToList();
             }
 
-            // Оновлюємо список
             RestaurantList.ItemsSource = filteredRestaurants;
         }
-
-
-
-
     }
 }
