@@ -81,7 +81,8 @@
 
 
                 <!-- ScrollViewer for Restaurant List -->
-                <ListBox x:Name="RestaurantList" Grid.Column="1" Margin="10">
+                <ListBox x:Name="RestaurantList" Grid.Column="1" Margin="10"
+         SelectionChanged="RestaurantList_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -98,6 +99,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+
             </StackPanel>
 
 
