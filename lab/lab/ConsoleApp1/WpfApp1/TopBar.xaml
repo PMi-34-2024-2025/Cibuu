@@ -5,16 +5,21 @@
         <Button Content="CIBUU" HorizontalAlignment="Left" VerticalAlignment="Center"
                 Click="CIBUUButton_Click" Background="#4CAF50" Foreground="White"
                 Padding="10,5" Margin="10,0,0,0" />
+
         <ComboBox Width="50" Height="30" Margin="5" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C">
             <ComboBoxItem Content="Lviv" Background="#1976D2" Foreground="White"/>
             <ComboBoxItem Content="Kyiv" Background="#1976D2" Foreground="White"/>
             <ComboBoxItem Content="Odessa" Background="#1976D2" Foreground="White"/>
         </ComboBox>
+
         <TextBox Width="200" Height="30" Margin="5" Text="search" Foreground="Gray" GotFocus="RemoveText" LostFocus="AddText" Background="#E3F2FD"/>
         <Button Content="Recommendations" Click="OpenRecommendations_Click" Width="150" Height="30" Margin="5" Background="#2196F3" Foreground="White"/>
         <Button Content="Search" Click="OpenSearchPage_Click" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
         <Button Content="Sign up" Click="SignUp_Click" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
         <Button Content="Sign in" Click="SignIn_Click" Width="80" Height="30" Margin="5" Background="#2196F3" Foreground="White" BorderBrush="#1976D2"/>
         <Button Content="Адмін-панель" Click="OpenAdminPanel_Click" Width="150" Height="30" Margin="5" Background="#2196F3" Foreground="White"/>
+
+        <!-- Кнопка для переходу на сторінку користувача (спочатку схована) -->
+        <Button x:Name="UserPageButton" Content="User Page" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="30" Margin="5" Visibility="Hidden" Click="UserPageButton_Click"/>
     </StackPanel>
 </UserControl>

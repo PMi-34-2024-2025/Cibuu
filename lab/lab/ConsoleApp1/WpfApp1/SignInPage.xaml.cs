@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Cibuu.DAL;
+using Cibuu.DAL; 
 
 namespace WpfApp1
 {
@@ -57,8 +57,8 @@ namespace WpfApp1
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            string email = EmailTextBox.Text;
-            string username = NameTextBox.Text;
+            string email = EmailTextBox.Text.Trim();
+            string username = NameTextBox.Text.Trim();
             string password = PasswordBox.Password;
 
             bool isAuthenticated = DatabaseManager.AuthenticateUser(email, username, password);
@@ -71,6 +71,8 @@ namespace WpfApp1
                 if (mainWindow != null)
                 {
                     mainWindow.MainFrame.Navigate(new SearchPage());
+
+                    mainWindow.ShowUserPageButton();
                 }
             }
             else
@@ -78,5 +80,6 @@ namespace WpfApp1
                 MessageBox.Show("Invalid email, username, or password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
     }
 }
