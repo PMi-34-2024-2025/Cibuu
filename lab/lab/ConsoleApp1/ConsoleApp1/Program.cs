@@ -6,12 +6,10 @@ class Program
 {
     static void Main(string[] args)
     {
-<<<<<<< HEAD
+
         // Рядок підключення до PostgreSQL (заміни дані на свої)
-        string connectionString = "Host=localhost;Username=postgres;Password=23092005;Database=cibuu";
-=======
-        string connectionString = "Host=localhost;Username=postgres;Password=Vinzer1979;Database=cibuu";
->>>>>>> 70731f2d8e75b5ef494e5419e97b2629898b599b
+        string connectionString = "Host=localhost;Username=postgres;Password=2004;Database=cibuu";
+
 
         using (var connection = new NpgsqlConnection(connectionString))
         {
