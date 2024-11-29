@@ -1,4 +1,5 @@
 ﻿using Cibuu.DAL.Utilities;
+using Cibuu.DAL.models; 
 using System.Linq;
 using Npgsql;
 
@@ -7,6 +8,8 @@ namespace Cibuu.DAL
     public class DatabaseManager
     {
         private string _connectionString;
+
+        public static User AuthenticatedUser { get; private set; }
 
         public DatabaseManager(string connectionString)
         {
@@ -28,17 +31,36 @@ namespace Cibuu.DAL
             }
         }
 
+        /// <summary>
+        /// Аутентифікація користувача на основі email, username і пароля.
+        /// </summary>
+        /// <param name="email">Електронна пошта користувача</param>
+        /// <param name="username">Ім'я користувача</param>
+        /// <param name="password">Пароль користувача</param>
+        /// <returns>True, якщо аутентифікація успішна; інакше False</returns>
         public static bool AuthenticateUser(string email, string username, string password)
         {
-            using (var context = new CibuuDbContext()) 
+            using (var context = new CibuuDbContext()) // Створення екземпляра DbContext
             {
+                // Знаходимо користувача за email і username
                 var user = context.Users.FirstOrDefault(u => u.Email == email && u.Username == username);
 
-                if (user == null)
+                // Якщо користувача не знайдено або пароль неправильний
+                if (user == null || !PasswordHasher.Verify(password, user.PasswordHash))
                     return false;
 
-                return PasswordHasher.Verify(password, user.PasswordHash); 
+                // Зберігаємо дані авторизованого користувача
+                AuthenticatedUser = user;
+                return true;
             }
+        }
+
+        /// <summary>
+        /// Скидає інформацію про авторизованого користувача.
+        /// </summary>
+        public static void LogoutUser()
+        {
+            AuthenticatedUser = null;
         }
     }
 }

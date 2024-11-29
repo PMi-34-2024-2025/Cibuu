@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -9,16 +10,24 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new MainPage());
-            
+
+            if (MainFrame != null)
+            {
+                MainFrame.Navigate(new MainPage());
+            }
+            else
+            {
+                MessageBox.Show("MainFrame is not initialized.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
             TopBar.CIBUUClicked += TopBar_CIBUUClicked;
         }
+
 
         private void TopBar_CIBUUClicked(object sender, EventArgs e)
         {
             MainFrame.Navigate(new MainPage());
         }
-
 
         public void RemoveText(object sender, RoutedEventArgs e)
         {
@@ -54,5 +63,25 @@ namespace WpfApp1
         {
             MainFrame.Navigate(new RecommendationsPage());
         }
+
+        // Відображення зеленої кнопки після успішної аутентифікації
+        public void OnUserAuthenticated()
+        {
+            TopBar.ShowUserPageButton();
+        }
+
+        // Виправлення: доступ до TopBar без рекурсії
+        public TopBar TopBarControl
+        {
+            get { return TopBar; }
+        }
+
+        public void ShowUserPageButton()
+        {
+            // Переконуємося, що кнопка на панелі TopBar стає видимою
+            TopBar.UserPageButton.Visibility = Visibility.Visible;
+        }
+
+
     }
 }
