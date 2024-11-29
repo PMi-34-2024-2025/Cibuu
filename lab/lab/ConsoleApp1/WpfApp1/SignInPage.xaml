@@ -1,0 +1,43 @@
+﻿<Page x:Class="WpfApp1.SignInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Sign In Page">
+    <Grid Background="#F5F5F5">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+            <!-- Email -->
+            <TextBox Name="EmailTextBox"
+                     Text="Email"
+                     Foreground="Gray"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"
+                     Margin="0,10,0,0" 
+                     Height="30"/>
+
+            <!-- Username -->
+            <TextBox Name="NameTextBox"
+                     Text="Ім'я користувача"
+                     Foreground="Gray"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"
+                     Margin="0,10,0,0" 
+                     Height="30"/>
+
+            <!-- Password -->
+            <PasswordBox Name="PasswordBox"
+                         Tag="Пароль"
+                         Foreground="Gray"
+                         GotFocus="PasswordBox_GotFocus"
+                         LostFocus="PasswordBox_LostFocus"
+                         Margin="0,10,0,0"
+                         Height="30"/>
+
+            <!-- Login Button -->
+            <Button Content="Log In"
+                    Click="LogInButton_Click"
+                    Background="#4CAF50"
+                    Foreground="White"
+                    Margin="0,20,0,0"
+                    Height="35"/>
+        </StackPanel>
+    </Grid>
+</Page>
