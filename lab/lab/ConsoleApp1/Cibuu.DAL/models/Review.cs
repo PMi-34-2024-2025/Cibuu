@@ -8,7 +8,5 @@
         public int Rate { get; set; }
         public string Text { get; set; }
         public DateTime ReviewDate { get; set; }
-        public string ReviewText { get; set; }
-        public int Rating { get; set; }
     }
 }
