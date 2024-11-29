@@ -47,7 +47,7 @@
         <TextBlock Name="RestaurantRating" FontSize="18" Margin="10" Grid.Row="4" Grid.ColumnSpan="2"/>
 
         <!-- Лайк кнопка (серце) -->
-        <Button Name="LikeButton" Content="❤️" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="10" Grid.Row="5" Grid.Column="1" Click="LikeButton_Click"/>
+        <Button Name="LikeButton" Content="❤️" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="10" Grid.Row="5" Grid.Column="1"/>
 
         <!-- Повідомлення, якщо ресторан додано в улюблені -->
         <TextBlock Name="FavoriteMessage" Text="This restaurant has been added to your favorites!" Foreground="Green" Visibility="Collapsed" Margin="10" Grid.Row="6" Grid.Column="1"/>
@@ -59,11 +59,22 @@
         <Button Name="SubmitReviewButton" Content="Submit Review" Width="120" Height="40" Margin="10,5,10,10" Grid.Row="8" Grid.Column="1" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SubmitReviewButton_Click"/>
 
         <!-- Список відгуків (з прокручуванням) -->
+        <!-- Список відгуків (з прокручуванням) -->
         <ScrollViewer Name="ReviewList" Grid.Row="9" Grid.Column="0" Margin="10" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <TextBlock Text="Reviews" FontWeight="Bold" Margin="0,0,0,10" FontSize="18"/>
-                <!-- Статичні відгуки будуть динамічно додаватися сюди -->
+                <ItemsControl x:Name="ReviewsContainer">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,10">
+                                <TextBlock Text="{Binding Text}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding ReviewDate, StringFormat='{}{0:G}'}" FontStyle="Italic"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
         </ScrollViewer>
+
     </Grid>
 </Page>
